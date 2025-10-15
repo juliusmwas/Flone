@@ -7,7 +7,7 @@ export default function Navbar() {
 
   return (
     <div>
-      <nav className="flex items-center p-5 justify-between bg-emerald-900">
+      <nav className="flex border-b-1 border-gray-600 items-center p-5 justify-between bg-emerald-900">
         <div className="p-1">
           <h1 className="text-xl lg:text-3xl font-bold text-white">Flone</h1>
         </div>
@@ -17,7 +17,6 @@ export default function Navbar() {
           <li><a href="">Home</a></li>
           <li><a href="">Shop</a></li>
           <li><a href="">New Arrivals</a></li>
-          <li><a href="">Sales</a></li>
           <li><a href="">About</a></li>
           <li><a href="">Contact</a></li>
         </ul>
@@ -40,10 +39,9 @@ export default function Navbar() {
       {/* MOBILE MENU */}
       {isOpen && (
         <div className="md:hidden bg-emerald-900 text-white flex flex-col items-center gap-4 py-4 transition-all duration-300">
-          <a href="">Home</a>
+          <a href="#home">Home</a>
           <a href="">Shop</a>
           <a href="">New Arrivals</a>
-          <a href="">Sales</a>
           <a href="">About</a>
           <a href="">Contact</a>
 
