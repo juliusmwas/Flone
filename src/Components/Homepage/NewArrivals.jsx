@@ -35,9 +35,9 @@ export default function NewArrivals(){
     return(
         <section id="newarrivals" className="bg-gray-400">
             <div>
-                <div className="grid justify-items-center p-5">
-                    <h1 className="text-2xl lg:text-4xl font-bold pb-8  mt-3 lg:m-0 lg:mt-0 lg:p-2">NEW ARRIVALS</h1>
-                    <p className="text-xl lg:text-xl pb-8  mt-3 lg:m-0 lg:mt-0 lg:p-2">Discover the latest pieces designed for modern simplicity.</p>
+                <div className="grid justify-items-center lg:p-5">
+                    <h1 className="text-2xl lg:text-4xl font-bold lg:pb-8  mt-3 lg:m-0 lg:mt-0 lg:p-2">NEW ARRIVALS</h1>
+                    <p className="text-xs pb-3 lg:text-xl mt-3 lg:m-0 lg:mt-0 lg:p-2">Discover the latest pieces designed for modern simplicity.</p>
                 </div>
                 
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 p-3 ">
@@ -56,14 +56,14 @@ export default function NewArrivals(){
                             </div>
 
                             <div className="grid grid-cols-1 p-3">
-                                <button className="bg-emerald-900 w-full rounded-lg p-2 text-white font-medium cursor-pointer">Add to Cart</button>
+                                <button className="bg-emerald-900 text-xs w-full rounded-lg p-2 text-white font-medium cursor-pointer">Add to Cart</button>
                             </div>
                         </div>
                     ))}    
                 </div>
                  
                 <div className="grid justify-items-center p-2">
-                    <p className="cursor-pointer text-sm font-medium"><a href="#">View More...</a></p>
+                    <p className=" cursor-pointer text-sm font-medium"><a href="#">View More...</a></p>
                 </div>
 
             </div>
