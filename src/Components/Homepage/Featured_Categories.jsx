@@ -45,7 +45,7 @@ export default function Featured_Categories(){
         <section id="featured-categories" className=" w-full h-full p-2 overflow-hidden">
             <div>
                 <div className="grid justify-items-center  lg:pt-8">
-                    <h1 className="text-2xl lg:text-4xl font-bold lg:p-2 ">Featured Categories</h1>
+                    <h1 className="text-2xl lg:text-4xl font-bold pb-8  mt-3 lg:m-0 lg:mt-0 lg:p-2">Featured Categories</h1>
                 </div>
 
                 <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 lg:p-25">
@@ -56,7 +56,7 @@ export default function Featured_Categories(){
                             alt={item.title}
                             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                         />
-                        <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                         <div className="absolute bottom-0 w-full p-4 translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-200 transition-all duration-500">
                             <h3 className="text-white text-sm lg:text-xl font-semibold">{item.title}</h3>
                             <p className="text-gray-200 text-xs lg:text-sm mt-1">{item.desc}</p>

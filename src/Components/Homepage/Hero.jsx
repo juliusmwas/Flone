@@ -60,7 +60,7 @@ export default function Hero() {
 
           {/* Main image */}
           <motion.img
-            src="/public/Hero.jpeg"
+            src="/public/download (16).jpeg"
             alt="Main hero"
             className="relative md:absolute top-0 right-0 w-56 sm:w-64 md:w-72 h-72 sm:h-80 object-cover rounded-2xl shadow-2xl z-10"
             initial={{ opacity: 0, y: 50 }}
