@@ -9,12 +9,12 @@ export default function Navbar() {
     <div>
       <nav className="flex border-b-1 border-gray-600 items-center p-5 justify-between bg-emerald-900">
         <div className="p-1">
-          <h1 className="text-xl lg:text-3xl font-bold text-white">Flone</h1>
+          <h1 className="text-xl lg:text-3xl font-bold text-white">Flone.</h1>
         </div>
 
         {/* NAV LINKS - visible on medium screens and up */}
         <ul className="hidden md:flex justify-between text-sm text-white gap-8 list-none">
-          <li><a href="">Home</a></li>
+          <li><a href="#hero">Home</a></li>
           <li><a href="">Shop</a></li>
           <li><a href="">New Arrivals</a></li>
           <li><a href="">About</a></li>
@@ -39,7 +39,7 @@ export default function Navbar() {
       {/* MOBILE MENU */}
       {isOpen && (
         <div className="md:hidden bg-emerald-900 text-white flex flex-col items-center gap-4 py-4 transition-all duration-300">
-          <a href="#home">Home</a>
+          <a href="#hero">Home</a>
           <a href="">Shop</a>
           <a href="">New Arrivals</a>
           <a href="">About</a>

@@ -1,12 +1,14 @@
 import Navbar from "./Components/Navbar"
-import Homepage from "./Components/Homepage"
+import Hero from "./Components/Homepage/Hero"
+import Featured_Categories from "./Components/Homepage/Featured_Categories"
 
 function App() {
 
   return (
     <>
       < Navbar/>
-      < Homepage/>
+      < Hero/>
+      < Featured_Categories/>
     </>
   )
 }
