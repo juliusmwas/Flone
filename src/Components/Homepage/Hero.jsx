@@ -14,7 +14,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <h1 className="text-4xl md:text-5xl font-bold">
+          <h1 className="text-2xl lg:text-4xl md:text-5xl font-bold">
             Modern Essentials <br /> for the Modern Man.
           </h1>
 
