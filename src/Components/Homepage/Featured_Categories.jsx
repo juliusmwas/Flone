@@ -45,7 +45,7 @@ export default function Featured_Categories(){
         <section id="featured-categories" className=" w-full h-full p-2 overflow-hidden">
             <div>
                 <div className="grid justify-items-center  lg:pt-8">
-                    <h1 className="text-2xl lg:text-4xl font-bold pb-8  mt-3 lg:m-0 lg:mt-0 lg:p-2">Featured Categories</h1>
+                    <h1 className="text-2xl lg:text-4xl font-bold pb-8  mt-3 lg:m-0 lg:mt-0 lg:p-2 text-emerald-900">Featured Categories</h1>
                 </div>
 
                 <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 lg:p-25">

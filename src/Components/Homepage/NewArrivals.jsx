@@ -33,11 +33,11 @@ export default function NewArrivals(){
     ];
 
     return(
-        <section id="newarrivals" className="bg-gray-100">
+        <section id="newarrivals" className="bg-gray-100 ">
             <div>
                 <div className="grid justify-items-center  lg:p-5">
-                    <h1 className="text-2xl lg:text-4xl font-bold lg:pb-8  mt-3 lg:m-0 lg:mt-0 lg:p-2">NEW ARRIVALS</h1>
-                    <p className="text-xs pb-3 lg:text-xl mt-3 lg:m-0 lg:mt-0 lg:p-2">Discover the latest pieces designed for modern simplicity.</p>
+                    <h1 className="text-2xl lg:text-4xl font-bold lg:pb-8  mt-3 lg:m-0 lg:mt-0 lg:p-2 text-emerald-900">NEW ARRIVALS</h1>
+                    <p className="text-xs pb-3 lg:text-xl mt-3 lg:m-0 lg:mt-0 lg:p-2 text-emerald-900">Discover the latest pieces designed for modern simplicity.</p>
                 </div>
                 
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 p-3 ">

@@ -3,6 +3,7 @@ import Hero from "./Components/Homepage/Hero"
 import Featured_Categories from "./Components/Homepage/Featured_Categories"
 import NewArrivals from "./Components/Homepage/NewArrivals"
 import Banner from "./Components/Homepage/Banner"
+import Footer from "./Components/Homepage/Footer"
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
       < Featured_Categories/>
       < NewArrivals/>
       < Banner/>
+      < Footer/>
     </>
   )
 }
