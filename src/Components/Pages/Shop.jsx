@@ -314,7 +314,7 @@ export default function Shop() {
   const categories = ["All", "Tops", "Bottoms", "Shoes", "Outerwear", "Accessories"];
 
   return (
-    <section className="min-h-screen bg-gray-50 py-20 px-8 md:px-16">
+    <section id="shop" className="min-h-screen bg-gray-50 py-20 px-2 md:px-16">
       {/* ===== Header ===== */}
       <motion.div
         className="text-center mb-12"
@@ -322,10 +322,10 @@ export default function Shop() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <h1 className="text-4xl font-bold text-emerald-900 mb-2">
+        <h1 className="text-2xl lg:text-4xl mt-4 font-bold text-emerald-900 mb-2">
           Shop Collection
         </h1>
-        <p className="text-gray-600 text-lg mb-4">
+        <p className="text-gray-600 text-sm lg:text-lg mb-4">
           Explore timeless styles designed for everyday confidence.
         </p>
         <button
@@ -358,7 +358,7 @@ export default function Shop() {
       {/* ===== Product Grid ===== */}
       <motion.div
         layout
-        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10"
+        className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4"
       >
         {filteredProducts.map((product, index) => (
           <motion.div
@@ -374,17 +374,17 @@ export default function Shop() {
               <motion.img
                 src={product.image}
                 alt={product.name}
-                className="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-110"
+                className="w-full  h-50 lg:h-72 object-cover transition-transform duration-500 group-hover:scale-110"
               />
             </div>
 
             {/* Text Details */}
-            <div className="p-5 flex flex-col items-center">
-              <h3 className="text-lg font-semibold text-emerald-900 mb-2 text-center">
+            <div className="p-2 flex flex-col items-center">
+              <h3 className="text-sm lg:text-lg font-semibold text-emerald-900 mb-2 text-center">
                 {product.name}
               </h3>
-              <p className="text-gray-700 mb-3">{product.price}</p>
-              <button className="bg-emerald-900 text-white px-6 py-2 rounded-lg hover:bg-emerald-800 transition">
+              <p className=" lg:text-lg text-gray-700 font-medium mb-3">{product.price}</p>
+              <button className="bg-emerald-900 text-xs lg:text-sm font-medium text-white px-6 py-2 rounded-lg hover:bg-emerald-800 transition">
                 Add to Cart
               </button>
             </div>

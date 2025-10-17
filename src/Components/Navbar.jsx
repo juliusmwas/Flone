@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { IoCartOutline, IoMenu, IoClose } from "react-icons/io5";
+import { Link } from "react-router-dom";
+
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,12 +16,13 @@ export default function Navbar() {
 
         {/* Desktop Links */}
         <ul className="hidden md:flex justify-between text-sm gap-8">
-          <li><a href="hero">Home</a></li>
-          <li><a href="">Shop</a></li>
+          <li><a href="#hero">Home</a></li>
+          <li><Link to="/shop">Shop</Link></li>
           <li><a href="#newarrivals">New Arrivals</a></li>
-          <li><a href="">About</a></li>
-          <li><a href="">Contact</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
+
 
         {/* Desktop Icons */}
         <div className="hidden md:flex text-xl items-center gap-5">
@@ -49,11 +52,12 @@ export default function Navbar() {
         />
 
         {/* Menu Links */}
-        <a href="#hero" onClick={() => setIsOpen(false)}>Home</a>
-        <a href="" onClick={() => setIsOpen(false)}>Shop</a>
+        <Link to="/" onClick={() => setIsOpen(false)}>Home</Link>
+        <Link to="/shop" onClick={() => setIsOpen(false)}>Shop</Link>
         <a href="#newarrivals" onClick={() => setIsOpen(false)}>New Arrivals</a>
-        <a href="" onClick={() => setIsOpen(false)}>About</a>
-        <a href="" onClick={() => setIsOpen(false)}>Contact</a>
+        <a href="#about" onClick={() => setIsOpen(false)}>About</a>
+        <a href="#contact" onClick={() => setIsOpen(false)}>Contact</a>
+
 
         {/* Buttons */}
         <div className="flex flex-col gap-3 mt-4">
