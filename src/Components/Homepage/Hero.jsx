@@ -1,12 +1,16 @@
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 export default function Hero() {
+  const Navigate = useNavigate();
+
+
   return (
     <section
       id="hero"
-      className="bg-emerald-900 text-white flex items-center justify-center h-auto md:h-[90vh] px-6 sm:px-12 py-10 md:py-0 overflow-hidden"
+      className="bg-emerald-900 text-white flex items-center mt-15 lg:mt-20 justify-center h-auto md:h-[90vh] px-6 sm:px-12 py-10 md:py-0 overflow-hidden"
     >
-      <div className="flex flex-col md:flex-row items-center justify-between w-full gap-8">
+      <div className="flex flex-col md:flex-row items-center justify-between  w-full gap-8">
         {/* ===== Hero Text ===== */}
         <motion.div
           className="text-center md:text-left ml-0 md:ml-15 space-y-4"
@@ -14,27 +18,32 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <h1 className="text-2xl lg:text-4xl md:text-5xl font-bold">
+          <h1 className="text-2xl lg:pb-4 lg:text-4xl md:text-5xl font-bold">
             Modern Essentials <br /> for the Modern Man.
           </h1>
 
-          <p className="text-gray-200 text-base md:text-lg">
+          <p className="text-gray-200 lg:pb-4 text-base md:text-lg">
             Elevate your wardrobe with timeless quality and effortless style.
           </p>
 
-          <div className="flex flex-wrap justify-center md:justify-start gap-4 pt-2">
+          <div className=" grid grid-cols-1 lg:flex lg:flex-wrap justify-center md:justify-start gap-4 pt-2">
             <motion.button
-              className="bg-white text-emerald-900 font-medium text-sm md:text-base px-6 py-3 rounded-xl shadow hover:bg-gray-100 transition"
+              className="bg-white cursor-pointer text-emerald-900 font-medium text-sm md:text-base px-6 py-3 rounded-xl shadow hover:bg-gray-100 transition"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              onClick={() => Navigate("/Shop")}
             >
               Shop Now
             </motion.button>
 
             <motion.button
-              className="border border-white text-white font-medium text-sm md:text-base px-6 py-3 rounded-xl hover:bg-white/10 transition"
+              className="border cursor-pointer border-white text-white font-medium text-sm md:text-base px-6 py-3 rounded-xl hover:bg-white/10 transition"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              onClick={() => {
+                const section =document.getElementById("newarrivals");
+                section?.scrollIntoView({ behavior: "smooth"})
+              }}
             >
               New Arrivals
             </motion.button>

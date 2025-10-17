@@ -15,22 +15,22 @@ export default function Footer() {
                 {/* Shop Links */}
                 <div className="text-center lg:text-left">
                     <h3 className="font-bold text-lg mb-2">SHOP</h3>
-                    <ul className="text-sm text-gray-400 space-y-1">
-                        <li>New Arrivals</li>
-                        <li>All Products</li>
-                        <li>Sale Items</li>
-                        <li>About</li>
+                    <ul className="text-sm text-gray-400 space-y-1 cursor-pointer">
+                        <li><a href="#newarrivals">New Arrivals</a></li>
+                        <li><a href="">All Products</a></li>
+                        <li><a href="">Sale Items</a></li>
+                        <li><a href="">About</a></li>
                     </ul>
                 </div>
 
                 {/* Support Links */}
                 <div className="text-center lg:text-left">
                     <h3 className="font-bold text-lg mb-2">SUPPORT</h3>
-                    <ul className="text-sm text-gray-400 space-y-1">
-                        <li>FAQ</li>
-                        <li>Returns</li>
-                        <li>Offers</li>
-                        <li>Contact</li>
+                    <ul className="text-sm text-gray-400 space-y-1 cursor-pointer">
+                        <li><a href="">FAQ</a></li>
+                        <li><a href="">Returns</a></li>
+                        <li><a href="">Offers</a></li>
+                        <li><a href="">Contact</a></li>
                     </ul>
                 </div>
 
