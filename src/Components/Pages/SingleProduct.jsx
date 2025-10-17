@@ -1,41 +1,48 @@
 import { useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import products from "../data/products";
 
 export default function SingleProduct() {
-  const [selectedSize, setSelectedSize] = useState("M");
-  const [selectedColor, setSelectedColor] = useState("Black");
+  const { id } = useParams();
+  const navigate = useNavigate();
+
+  const product = products.find((p) => p.id === Number(id));
+
+  const [mainImage, setMainImage] = useState(product?.image || "");
+  const [selectedSize, setSelectedSize] = useState(product?.sizes?.[0] || "M");
+  const [selectedColor, setSelectedColor] = useState(product?.colors?.[0] || "Black");
   const [isAccordionOpen, setIsAccordionOpen] = useState(false);
 
-  const product = {
-    title: "Classic Cotton T-Shirt",
-    price: 39.99,
-    description:
-      "A timeless cotton T-shirt designed for everyday comfort. Soft, breathable, and perfect for layering or wearing solo.",
-    images: [
-      "https://images.unsplash.com/photo-1602810318383-e386cc2a3cd7?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1583511655903-7e9bbd3aada6?auto=format&fit=crop&w=800&q=80",
-    ],
-    colors: ["Black", "White", "Navy"],
-    sizes: ["S", "M", "L", "XL"],
-  };
-
-  const [mainImage, setMainImage] = useState(product.images[0]);
+  if (!product) {
+    return (
+      <div className="min-h-screen flex items-center justify-center text-gray-700">
+        Product not found.
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen pt-28 px-5 md:px-20 bg-white text-gray-800">
+      <button
+        onClick={() => navigate(-1)}
+        className="text-emerald-700 mb-6 underline hover:text-emerald-900"
+      >
+        ← Back
+      </button>
+
       <div className="grid md:grid-cols-2 gap-10">
         {/* Image Gallery */}
         <div className="flex flex-col items-center">
           <img
             src={mainImage}
-            alt={product.title}
+            alt={product.name}
             className="w-full max-w-md rounded-2xl object-cover shadow-lg transition-transform duration-300 hover:scale-105"
           />
 
           {/* Thumbnail Carousel */}
           <div className="flex gap-3 mt-4">
-            {product.images.map((img, idx) => (
+            {[product.image, ...(product.images || [])].map((img, idx) => (
               <img
                 key={idx}
                 src={img}
@@ -51,15 +58,15 @@ export default function SingleProduct() {
 
         {/* Product Info */}
         <div className="flex flex-col justify-center">
-          <h2 className="text-3xl font-semibold mb-2">{product.title}</h2>
-          <p className="text-2xl font-bold text-emerald-700 mb-4">${product.price}</p>
+          <h2 className="text-3xl font-semibold mb-2">{product.name}</h2>
+          <p className="text-2xl font-bold text-emerald-700 mb-4">{product.price}</p>
           <p className="text-gray-600 mb-6">{product.description}</p>
 
           {/* Size Selector */}
           <div className="mb-4">
             <h4 className="font-medium mb-2">Size</h4>
             <div className="flex gap-3">
-              {product.sizes.map((size) => (
+              {product.sizes?.map((size) => (
                 <button
                   key={size}
                   onClick={() => setSelectedSize(size)}
@@ -79,7 +86,7 @@ export default function SingleProduct() {
           <div className="mb-6">
             <h4 className="font-medium mb-2">Color</h4>
             <div className="flex gap-3">
-              {product.colors.map((color) => (
+              {product.colors?.map((color) => (
                 <button
                   key={color}
                   onClick={() => setSelectedColor(color)}
