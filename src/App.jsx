@@ -6,6 +6,7 @@ import NewArrivals from "./Components/Homepage/NewArrivals";
 import Banner from "./Components/Homepage/Banner";
 import Footer from "./Components/Homepage/Footer";
 import Shop from "./Components/Pages/Shop";
+import SingleProduct from "./Components/Pages/SingleProduct";
 
 function App() {
   return (
@@ -25,9 +26,9 @@ function App() {
             </>
           }
         />
-
-        {/* Shop page route */}
         <Route path="/shop" element={<Shop />} />
+        <Route path="/product/:id" element={<SingleProduct />} />
+
       </Routes>
     </BrowserRouter>
   );

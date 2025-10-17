@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+
 
 export default function Shop() {
   const navigate = useNavigate();
@@ -330,7 +332,7 @@ export default function Shop() {
         </p>
         <button
           onClick={() => navigate("/")}
-          className="text-emerald-900 underline hover:text-emerald-700 text-sm"
+          className="text-emerald-900 underline cursor-pointer hover:text-emerald-700 text-sm"
         >
           ← Back to Home
         </button>
@@ -357,40 +359,45 @@ export default function Shop() {
 
       {/* ===== Product Grid ===== */}
       <motion.div
-        layout
-        className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4"
-      >
-        {filteredProducts.map((product, index) => (
-          <motion.div
-            key={product.id}
-            layout
-            className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition relative group"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.05 }}
-          >
-            {/* Product Image */}
-            <div className="overflow-hidden">
-              <motion.img
-                src={product.image}
-                alt={product.name}
-                className="w-full  h-50 lg:h-72 object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-            </div>
+          layout
+          className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4"
+        >
+          {filteredProducts.map((product, index) => (
+            <Link key={product.id} to={`/product/${product.id}`}>
+              <motion.div
+                layout
+                className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition relative group"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.05 }}
+              >
+                {/* Product Image */}
+                <div className="overflow-hidden">
+                  <motion.img
+                    src={product.image}
+                    alt={product.name}
+                    className="w-full h-50 lg:h-72 object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                </div>
 
-            {/* Text Details */}
-            <div className="p-2 flex flex-col items-center">
-              <h3 className="text-sm lg:text-lg font-semibold text-emerald-900 mb-2 text-center">
-                {product.name}
-              </h3>
-              <p className=" lg:text-lg text-gray-700 font-medium mb-3">{product.price}</p>
-              <button className="bg-emerald-900 text-xs lg:text-sm font-medium text-white px-6 py-2 rounded-lg hover:bg-emerald-800 transition">
-                Add to Cart
-              </button>
-            </div>
-          </motion.div>
-        ))}
-      </motion.div>
+                {/* Text Details */}
+                <div className="p-2 flex flex-col items-center">
+                  <h3 className="text-sm lg:text-lg font-semibold text-emerald-900 mb-2 text-center">
+                    {product.name}
+                  </h3>
+                  <p className="lg:text-lg text-gray-700 font-medium mb-3">
+                    {product.price}
+                  </p>
+                  <button className="bg-emerald-900 text-xs lg:text-sm font-medium text-white px-6 py-2 rounded-lg hover:bg-emerald-800 transition">
+                    Add to Cart
+                  </button>
+                </div>
+              </motion.div>
+            </Link>
+          ))}
+        </motion.div>
+
+      
 
       {/* No Products Message */}
       {filteredProducts.length === 0 && (
