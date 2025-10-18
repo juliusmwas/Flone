@@ -9,6 +9,7 @@ import Shop from "./Components/Pages/Shop";
 import SingleProduct from "./Components/Pages/SingleProduct";
 import Cart from "./Components/Pages/Cart";
 import Checkout from "./Components/Pages/Checkout";
+import Account from "./Components/Pages/Account";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
         <Route path="/product/:id" element={<SingleProduct />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="/account" element={<Account />} />
 
       </Routes>
     </div>
