@@ -3,8 +3,23 @@ import { Link } from "react-router-dom";
 import { CartContext } from "../Pages/CartContext";
 
 const Cart = () => {
-  const { cartItems, removeFromCart, updateQuantity, subtotal } = useContext(CartContext);
+  const { cartItems, removeFromCart, updateQuantity } = useContext(CartContext);
 
+  // ✅ Safely handle prices with or without "$"
+  const parsePrice = (price) => {
+    if (!price) return 0;
+    return typeof price === "string"
+      ? parseFloat(price.replace(/[^0-9.]/g, "")) // removes $ or commas
+      : price;
+  };
+
+  const subtotal = cartItems.reduce(
+    (total, item) => total + parsePrice(item.price) * item.quantity,
+    0
+  );
+
+  const deliveryFee = cartItems.length > 0 ? 10 : 0;
+  const total = subtotal + deliveryFee;
 
   return (
     <div className="min-h-screen bg-gray-50 py-10 px-6 md:px-20">
@@ -22,7 +37,7 @@ const Cart = () => {
         </div>
       ) : (
         <div className="grid md:grid-cols-3 gap-8">
-          {/* Cart Items */}
+          {/* 🛍 Cart Items */}
           <div className="md:col-span-2 bg-white rounded-2xl shadow p-6">
             {cartItems.map((item) => (
               <div
@@ -37,7 +52,9 @@ const Cart = () => {
                   />
                   <div>
                     <h2 className="text-lg font-semibold">{item.name}</h2>
-                    <p className="text-gray-600">${item.price}</p>
+                    <p className="text-gray-600">
+                      ${parsePrice(item.price).toFixed(2)}
+                    </p>
                   </div>
                 </div>
 
@@ -46,7 +63,9 @@ const Cart = () => {
                     type="number"
                     min="1"
                     value={item.quantity}
-                    onChange={(e) => updateQuantity(item.id, parseInt(e.target.value))}
+                    onChange={(e) =>
+                      updateQuantity(item.id, parseInt(e.target.value))
+                    }
                     className="w-16 border rounded-md text-center"
                   />
                   <button
@@ -60,27 +79,25 @@ const Cart = () => {
             ))}
           </div>
 
-          {/* Summary */}
+          {/* 💵 Summary */}
           <div className="bg-white rounded-2xl shadow p-6 h-fit">
             <h2 className="text-xl font-semibold mb-4">Order Summary</h2>
 
             <div className="flex justify-between mb-2">
               <span>Subtotal</span>
               <span>${subtotal.toFixed(2)}</span>
-
             </div>
 
             <div className="flex justify-between mb-2 text-gray-600">
               <span>Delivery Estimate</span>
-              <span>$10.00</span>
+              <span>${deliveryFee.toFixed(2)}</span>
             </div>
 
             <hr className="my-3" />
 
             <div className="flex justify-between font-semibold text-lg">
               <span>Total</span>
-              <span>${(subtotal + 10).toFixed(2)}</span>
-
+              <span>${total.toFixed(2)}</span>
             </div>
 
             <div className="flex flex-col gap-3 mt-6">

@@ -35,7 +35,7 @@ export default function NewArrivals() {
 
             <div className="w-full p-3">
               <h3 className="text-sm lg:text-xl font-semibold">{item.name}</h3>
-              <p className="text-xs lg:text-sm mt-1">KES {item.price}</p>
+              <p className="text-xs lg:text-sm mt-1">{item.price}</p>
             </div>
 
             <div className="grid grid-cols-1 p-3">
