@@ -421,6 +421,52 @@
     colors: ["White", "Black", "Grey"],
     sizes: ["40", "41", "42", "43", "44"],
     },
+    {
+      id: 43,
+      name: "Cotton Shirt",
+      image: "/new arrivals images/shirt1.jpeg",
+      price: 1500,
+      description:
+        "A soft, breathable cotton shirt perfect for any casual day. Lightweight and comfortable for everyday wear.",
+      sizes: ["S", "M", "L", "XL"],
+      colors: ["White", "Blue", "Gray"],
+      images: [ "/new arrivals images/shirt2.jpeg"],
+    },
+    {
+      id: 44,
+      name: "Jordan Sneakers",
+      image: "/new arrivals images/Jordan.jpeg",
+      price: 3500,
+      description:
+        "Classic Jordan sneakers offering top-notch comfort and bold streetwear style. Perfect for daily or sports use.",
+      sizes: ["40", "41", "42", "43", "44"],
+      colors: ["Black", "White", "Red"],
+      images: ["/new arrivals images/Jordan.jpeg"],
+    },
+    {
+      id: 45,
+      name: "Minimalist Denim Jacket",
+      image:
+        "/new arrivals images/Chaqueta de mezclilla rasgada para hombre, chaqueta negra para rapero para salir, reunirse, ir al trabajo, calle, otoño.jpeg",
+      price: 5800,
+      description:
+        "A durable denim jacket with a modern minimalist look. Great for layering and all-season wear.",
+      sizes: ["S", "M", "L", "XL"],
+      colors: ["Black", "Navy Blue"],
+      images: ["/new arrivals images/denim1.jpeg"],
+    },
+    {
+      id: 46,
+      name: "Textured Knit Polo",
+      image:
+        "/new arrivals images/قميص بولو كاجوال قصير الأكمام بألوان متباينة للرجال.jpeg",
+      price: 3500,
+      description:
+        "A stylish short-sleeve polo made with textured knit fabric. Perfect blend of comfort and sophistication.",
+      sizes: ["S", "M", "L", "XL"],
+      colors: ["Beige", "Navy", "Olive"],
+      images: ["/new arrivals images/polo1.jpeg"],
+    },
   ];
 
   export default products;
