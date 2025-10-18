@@ -4,7 +4,7 @@
     {
       id: 1,
       name: "Classic White Shirt",
-      price: "$45",
+      price: 45,
       category: "Tops",
       image: "/public/shop/white shirt.jpeg",
       description: "A timeless white shirt tailored for comfort and versatility — perfect for both formal and casual wear.",
@@ -14,7 +14,7 @@
     {
       id: 27,
       name: "Classic Jeans",
-      price: "$70",
+      price: 70,
       category: "Bottoms",
       image: "/public/shop/Classic Jeans 2.jpeg",
       description: "Durable denim jeans with a slim fit and stretch comfort for all-day wear.",
@@ -24,7 +24,7 @@
     {
       id: 31,
       name: "Leather Belt",
-      price: "$35",
+      price: 35,
       category: "Accessories",
       image: "/public/shop/Leather Belt 2.jpeg",
       description: "Handcrafted genuine leather belt with a brushed metal buckle — a timeless essential.",
@@ -34,7 +34,7 @@
     {
       id: 12,
       name: "Minimalist Sneakers",
-      price: "$85",
+      price: 85,
       category: "Shoes",
       image: "/public/shop/Minimalist Sneakers 2.jpeg",
       description: "Clean, modern sneakers crafted with premium leather and cushioned soles for all-day comfort.",
@@ -44,7 +44,7 @@
     {
       id: 28,
       name: "Classic Jeans",
-      price: "$70",
+      price: 70,
       category: "Bottoms",
       image: "/public/shop/Classic Jeans 3.jpeg",
       description: "Durable denim jeans with a slim fit and stretch comfort for all-day wear.",
@@ -54,7 +54,7 @@
     {
       id: 32,
       name: "Leather Belt",
-      price: "$35",
+      price: 35,
       category: "Accessories",
       image: "/public/shop/Leather Belt 3.jpeg",
       description: "Handcrafted genuine leather belt with a brushed metal buckle — a timeless essential.",
@@ -64,7 +64,7 @@
     {
       id: 13,
       name: "Minimalist Sneakers",
-      price: "$85",
+      price: 85,
       category: "Shoes",
       image: "/public/shop/Minimalist Sneakers 5.jpeg",
       description: "Clean, modern sneakers crafted with premium leather and cushioned soles for all-day comfort.",
@@ -74,7 +74,7 @@
     {
       id: 2,
       name: "Tailored Navy Blazer",
-      price: "$120",
+      price: 120,
       category: "Tops",
       image: "/public/shop/Tailored Navy Blazer.jpeg",
       description: "A refined navy blazer with a slim fit cut — ideal for business meetings and evening events.",
@@ -84,7 +84,7 @@
     {
       id: 33,
       name: "Leather Belt",
-      price: "$35",
+      price: 35,
       category: "Accessories",
       image: "/public/shop/Leather Belt 4.jpeg",
       description: "Handcrafted genuine leather belt with a brushed metal buckle — a timeless essential.",
@@ -94,7 +94,7 @@
     {
       id: 39,
       name: "Wool Overcoat",
-      price: "$140",
+      price: 140,
       category: "Outerwear",
       image: "/public/shop/Wool Overcoat 2.jpeg",
       description: "A premium wool overcoat that delivers warmth and sophistication for the modern gentleman.",
@@ -104,7 +104,7 @@
     {
       id: 29,
       name: "Classic Jeans",
-      price: "$70",
+      price: 70,
       category: "Bottoms",
       image: "/public/shop/Classic Jeans 4.jpeg",
       description: "Durable denim jeans with a slim fit and stretch comfort for all-day wear.",
@@ -114,7 +114,7 @@
     {
       id: 38,
       name: "Oxford Dress Shoes",
-      price: "$95",
+      price: 95,
       category: "Shoes",
       image: "/public/shop/Oxford Dress Shoes 5.jpeg",
       description: "Elegant oxford shoes crafted from genuine leather — perfect for formal occasions.",
@@ -124,7 +124,7 @@
     {
       id: 40,
       name: "Wool Overcoat",
-      price: "$140",
+      price: 140,
       category: "Outerwear",
       image: "/public/shop/Wool Overcoat 3.jpeg",
       description: "A premium wool overcoat that delivers warmth and sophistication for the modern gentleman.",
@@ -134,7 +134,7 @@
     {
       id: 22,
       name: "Minimalist Sneakers",
-      price: "$85",
+      price: 85,
       category: "Shoes",
       image: "/public/shop/Minimalist Sneakers 15.jpeg",
       description: "Clean, modern sneakers crafted with premium leather and cushioned soles for all-day comfort.",
@@ -144,7 +144,7 @@
     {
       id: 34,
       name: "Leather Belt",
-      price: "$35",
+      price: 35,
       category: "Accessories",
       image: "/public/shop/Leather Belt 5.jpeg",
       description: "Handcrafted genuine leather belt with a brushed metal buckle — a timeless essential.",
@@ -154,7 +154,7 @@
     {
       id: 41,
       name: "Wool Overcoat",
-      price: "$140",
+      price: 140,
       category: "Outerwear",
       image: "/public/shop/Wool Overcoat 4.jpeg",
       description: "A premium wool overcoat that delivers warmth and sophistication for the modern gentleman.",
@@ -164,7 +164,7 @@
     {
       id: 30,
       name: "Classic Jeans",
-      price: "$70",
+      price: 70,
       category: "Bottoms",
       image: "/public/shop/Classic Jeans 5.jpeg",
       description: "Durable denim jeans with a slim fit and stretch comfort for all-day wear.",
@@ -174,7 +174,7 @@
     {
       id: 37,
       name: "Oxford Dress Shoes",
-      price: "$95",
+      price: 95,
       category: "Shoes",
       image: "/public/shop/Oxford Dress Shoes 4.jpeg",
       description: "Elegant oxford shoes crafted from genuine leather — perfect for formal occasions.",
@@ -184,7 +184,7 @@
     {
       id: 3,
       name: "Casual Chinos",
-      price: "$60",
+      price: 60,
       category: "Bottoms",
       image: "/public/shop/Casual Chinos 1.jpeg",
       description: "Lightweight cotton chinos designed for everyday comfort and smart-casual style.",
@@ -194,7 +194,7 @@
     {
       id: 42,
       name: "Wool Overcoat",
-      price: "$140",
+      price: 140,
       category: "Outerwear",
       image: "/public/shop/Wool Overcoat 5.jpeg",
       description: "A premium wool overcoat that delivers warmth and sophistication for the modern gentleman.",
@@ -204,7 +204,7 @@
     {
       id: 14,
       name: "Minimalist Sneakers",
-      price: "$85",
+      price: 85,
       category: "Shoes",
       image: "/public/shop/Minimalist Sneakers 6.jpeg",
       description: "Clean, modern sneakers crafted with premium leather and cushioned soles for all-day comfort.",
@@ -214,7 +214,7 @@
     {
       id: 36,
       name: "Oxford Dress Shoes",
-      price: "$95",
+      price: 95,
       category: "Shoes",
       image: "/public/shop/Oxford Dress Shoes 3.jpeg",
       description: "Elegant oxford shoes crafted from genuine leather — perfect for formal occasions.",
@@ -224,7 +224,7 @@
     {
       id: 23,
       name: "Minimalist Sneakers",
-      price: "$85",
+      price: 85,
       category: "Shoes",
       image: "/public/shop/Minimalist Sneakers 16.jpeg",
       description: "Clean, modern sneakers crafted with premium leather and cushioned soles for all-day comfort.",
@@ -234,7 +234,7 @@
     {
       id: 4,
       name: "Minimalist Sneakers",
-      price: "$85",
+      price: 85,
       category: "Shoes",
       image: "/public/shop/Minimalist Sneakers 1.jpeg",
       description: "Clean, modern sneakers crafted with premium leather and cushioned soles for all-day comfort.",
@@ -244,7 +244,7 @@
     {
       id: 35,
       name: "Oxford Dress Shoes",
-      price: "$95",
+      price: 95,
       category: "Shoes",
       image: "/public/shop/Oxford Dress Shoes 2.jpeg",
       description: "Elegant oxford shoes crafted from genuine leather — perfect for formal occasions.",
@@ -254,7 +254,7 @@
     {
       id: 24,
       name: "Minimalist Sneakers",
-      price: "$85",
+      price: 85,
       category: "Shoes",
       image: "/public/shop/Minimalist Sneakers 17.jpeg",
       description: "Clean, modern sneakers crafted with premium leather and cushioned soles for all-day comfort.",
@@ -264,7 +264,7 @@
     {
       id: 9,
       name: "Casual Chinos",
-      price: "$60",
+      price: 60,
       category: "Bottoms",
       image: "/public/shop/Casual Chinos 2.jpeg",
       description: "Lightweight cotton chinos designed for everyday comfort and smart-casual style.",
@@ -274,7 +274,7 @@
     {
       id: 25,
       name: "Minimalist Sneakers",
-      price: "$85",
+      price: 85,
       category: "Shoes",
       image: "/public/shop/Minimalist Sneakers 18.jpeg",
       description: "Clean, modern sneakers crafted with premium leather and cushioned soles for all-day comfort.",
@@ -284,7 +284,7 @@
     {
       id: 15,
       name: "Minimalist Sneakers",
-      price: "$85",
+      price: 85,
       category: "Shoes",
       image: "/public/shop/Minimalist Sneakers 8.jpeg",
       description: "Clean, modern sneakers crafted with premium leather and cushioned soles for all-day comfort.",
@@ -294,7 +294,7 @@
     {
       id: 26,
       name: "Minimalist Sneakers",
-      price: "$85",
+      price: 85,
       category: "Shoes",
       image: "/public/shop/Minimalist Sneakers 19.jpeg",
       description: "Clean, modern sneakers crafted with premium leather and cushioned soles for all-day comfort.",
@@ -304,7 +304,7 @@
     {
       id: 5,
       name: "Wool Overcoat",
-      price: "$140",
+      price: 140,
       category: "Outerwear",
       image: "/public/shop/Wool Overcoat 1.jpeg",
       description: "A premium wool overcoat that delivers warmth and sophistication for the modern gentleman.",
@@ -314,7 +314,7 @@
     {
       id: 16,
       name: "Minimalist Sneakers",
-      price: "$85",
+      price: 85,
       category: "Shoes",
       image: "/public/shop/Minimalist Sneakers 9.jpeg",
       description: "Clean, modern sneakers crafted with premium leather and cushioned soles for all-day comfort.",
@@ -324,7 +324,7 @@
     {
       id: 6,
       name: "Leather Belt",
-      price: "$35",
+      price: 35,
       category: "Accessories",
       image: "/public/shop/Leather Belt 1.jpeg",
       description: "Handcrafted genuine leather belt with a brushed metal buckle — a timeless essential.",
@@ -334,7 +334,7 @@
     {
       id: 17,
       name: "Minimalist Sneakers",
-      price: "$85",
+      price: 85,
       category: "Shoes",
       image: "/public/shop/Minimalist Sneakers 10.jpeg",
       description: "Clean, modern sneakers crafted with premium leather and cushioned soles for all-day comfort.",
@@ -344,7 +344,7 @@
     {
       id: 10,
       name: "Casual Chinos",
-      price: "$60",
+      price: 60,
       category: "Bottoms",
       image: "/public/shop/Casual Chinos 3.jpeg",
       description: "Lightweight cotton chinos designed for everyday comfort and smart-casual style.",
@@ -354,7 +354,7 @@
     {
       id: 18,
       name: "Minimalist Sneakers",
-      price: "$85",
+      price: 85,
       category: "Shoes",
       image: "/public/shop/Minimalist Sneakers 11.jpeg",
       description: "Clean, modern sneakers crafted with premium leather and cushioned soles for all-day comfort.",
@@ -364,7 +364,7 @@
     {
       id: 7,
       name: "Classic Jeans",
-      price: "$70",
+      price: 70,
       category: "Bottoms",
       image: "/public/shop/Classic Jeans 1.jpeg",
       description: "Durable denim jeans with a slim fit and stretch comfort for all-day wear.",
@@ -374,7 +374,7 @@
     {
       id: 19,
       name: "Minimalist Sneakers",
-      price: "$85",
+      price: 85,
       category: "Shoes",
       image: "/public/shop/Minimalist Sneakers 12.jpeg",
       description: "Clean, modern sneakers crafted with premium leather and cushioned soles for all-day comfort.",
@@ -384,7 +384,7 @@
     {
       id: 8,
       name: "Oxford Dress Shoes",
-      price: "$95",
+      price: 95,
       category: "Shoes",
       image: "/public/shop/Oxford Dress Shoes 1.jpeg",
       description: "Elegant oxford shoes crafted from genuine leather — perfect for formal occasions.",
@@ -394,7 +394,7 @@
     {
       id: 20,
       name: "Minimalist Sneakers",
-      price: "$85",
+      price: 85,
       category: "Shoes",
       image: "/public/shop/Minimalist Sneakers 13.jpeg",
       description: "Clean, modern sneakers crafted with premium leather and cushioned soles for all-day comfort.",
@@ -404,7 +404,7 @@
     {
       id: 11,
       name: "Casual Chinos",
-      price: "$60",
+      price: 60,
       category: "Bottoms",
       image: "/public/shop/Casual Chinos 4.jpeg",
       description: "Lightweight cotton chinos designed for everyday comfort and smart-casual style.",
@@ -414,7 +414,7 @@
     {
       id: 21,
       name: "Minimalist Sneakers",
-      price: "$85",
+      price: 85,
       category: "Shoes",
       image: "/public/shop/Minimalist Sneakers 14.jpeg",
       description: "Clean, modern sneakers crafted with premium leather and cushioned soles for all-day comfort.",
@@ -425,7 +425,7 @@
       id: 43,
       name: "Cotton Shirt",
       image: "/new arrivals images/shirt1.jpeg",
-      price: "$15",
+      price: 15,
       description:
         "A soft, breathable cotton shirt perfect for any casual day. Lightweight and comfortable for everyday wear.",
       sizes: ["S", "M", "L", "XL"],
@@ -436,7 +436,7 @@
       id: 44,
       name: "Jordan Sneakers",
       image: "/new arrivals images/Jordan.jpeg",
-      price: "$85",
+      price: 85,
       description:
         "Classic Jordan sneakers offering top-notch comfort and bold streetwear style. Perfect for daily or sports use.",
       sizes: ["40", "41", "42", "43", "44"],
@@ -448,7 +448,7 @@
       name: "Minimalist Denim Jacket",
       image:
         "/new arrivals images/Chaqueta de mezclilla rasgada para hombre, chaqueta negra para rapero para salir, reunirse, ir al trabajo, calle, otoño.jpeg",
-      price: "$60",
+      price: 60,
       description:
         "A durable denim jacket with a modern minimalist look. Great for layering and all-season wear.",
       sizes: ["S", "M", "L", "XL"],
@@ -460,7 +460,7 @@
       name: "Textured Knit Polo",
       image:
         "/new arrivals images/قميص بولو كاجوال قصير الأكمام بألوان متباينة للرجال.jpeg",
-      price: "$20",
+      price: 20,
       description:
         "A stylish short-sleeve polo made with textured knit fabric. Perfect blend of comfort and sophistication.",
       sizes: ["S", "M", "L", "XL"],

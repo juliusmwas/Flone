@@ -84,7 +84,7 @@ export default function Shop() {
                   {product.name}
                 </h3>
                 <p className="lg:text-lg text-gray-700 font-medium mb-3">
-                  {product.price}
+                  ${product.price}
                 </p>
                 <button className="bg-emerald-900 text-xs lg:text-sm font-medium text-white px-6 py-2 rounded-lg hover:bg-emerald-800 transition">
                   Add to Cart
