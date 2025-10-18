@@ -7,10 +7,11 @@ import Banner from "./Components/Homepage/Banner";
 import Footer from "./Components/Homepage/Footer";
 import Shop from "./Components/Pages/Shop";
 import SingleProduct from "./Components/Pages/SingleProduct";
+import Cart from "./Components/Pages/Cart";
 
 function App() {
   return (
-    <BrowserRouter>
+      <div>
       <Navbar />
       <Routes>
         {/* Homepage route */}
@@ -28,9 +29,10 @@ function App() {
         />
         <Route path="/shop" element={<Shop />} />
         <Route path="/product/:id" element={<SingleProduct />} />
+        <Route path="/cart" element={<Cart />} />
 
       </Routes>
-    </BrowserRouter>
+    </div>
   );
 }
 

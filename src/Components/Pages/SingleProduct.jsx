@@ -2,10 +2,22 @@ import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import products from "../data/products";
+import { useContext } from "react";
+import { CartContext } from "../Pages/CartContext";
+
+
 
 export default function SingleProduct() {
   const { id } = useParams();
   const navigate = useNavigate();
+  const { addToCart } = useContext(CartContext);
+  
+  const handleAddToCart = () => {
+  addToCart(product);
+  navigate("/cart"); // 👈 this redirects after adding
+};
+
+
 
   const product = products.find((p) => p.id === Number(id));
 
@@ -103,9 +115,12 @@ export default function SingleProduct() {
           </div>
 
           {/* Add to Cart */}
-          <button className="bg-emerald-700 text-white py-3 rounded-lg font-medium hover:bg-emerald-800 transition mb-6">
+          <button 
+            onClick={handleAddToCart}
+            className="bg-emerald-700 text-white py-3 rounded-lg font-medium hover:bg-emerald-800 transition mb-6">
             Add to Cart
           </button>
+
 
           {/* Shipping & Returns Accordion */}
           <div className="border-t border-gray-300 pt-4">
