@@ -12,7 +12,7 @@ export default function About() {
         className="relative h-[60vh] flex items-center justify-center text-center bg-cover bg-center"
         style={{
           backgroundImage:
-            "url('/public/')", 
+            "url('/public/about-bg.png')", 
         }}
       >
         <div className="absolute inset-0 bg-black/50" />
