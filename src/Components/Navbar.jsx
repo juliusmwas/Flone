@@ -71,7 +71,7 @@ export default function Navbar() {
           <li><Link to="/">Home</Link></li>
           <li><Link to="/shop">Shop</Link></li>
           <li><a href="#newarrivals">New Arrivals</a></li>
-          <li><a href="#about">About</a></li>
+          <Link to="/about">About</Link>
           <li><a href="#contact">Contact</a></li>
         </ul>
 
@@ -141,7 +141,7 @@ export default function Navbar() {
         <Link to="/" onClick={() => setIsOpen(false)}>Home</Link>
         <Link to="/shop" onClick={() => setIsOpen(false)}>Shop</Link>
         <a href="#newarrivals" onClick={() => setIsOpen(false)}>New Arrivals</a>
-        <a href="#about" onClick={() => setIsOpen(false)}>About</a>
+        <Link to="/about" onClick={() => setIsOpen(false)}>About</Link>
         <a href="#contact" onClick={() => setIsOpen(false)}>Contact</a>
 
         {/* Cart Icon */}

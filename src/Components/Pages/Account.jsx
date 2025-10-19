@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { auth } from "../../firebase"; // ✅ make sure firebase.js is in src/
+import { onAuthStateChanged } from "firebase/auth";
 
 export default function Account() {
   const [user, setUser] = useState({
-    name: "John Doe",
-    email: "johndoe@email.com",
-    phone: "+254 700 123 456",
+    name: "",
+    email: "",
+    phone: "",
   });
 
   const [address, setAddress] = useState("123 Market Street, Nairobi, Kenya");
@@ -32,11 +34,37 @@ export default function Account() {
 
   const [isEditing, setIsEditing] = useState(false);
 
+  // 🧠 Load user info from Firebase or localStorage
+  useEffect(() => {
+    const storedUser = localStorage.getItem("accountUser");
+    if (storedUser) {
+      setUser(JSON.parse(storedUser));
+    }
+
+    const unsubscribe = onAuthStateChanged(auth, (firebaseUser) => {
+      if (firebaseUser) {
+        setUser((prev) => ({
+          ...prev,
+          name: firebaseUser.displayName || prev.name,
+          email: firebaseUser.email || prev.email,
+        }));
+      }
+    });
+
+    return () => unsubscribe();
+  }, []);
+
+  // 💾 Save to localStorage when user info changes
+  useEffect(() => {
+    localStorage.setItem("accountUser", JSON.stringify(user));
+  }, [user]);
+
   const handleEditToggle = () => setIsEditing(!isEditing);
 
   const handleSave = (e) => {
     e.preventDefault();
     setIsEditing(false);
+    localStorage.setItem("accountUser", JSON.stringify(user));
     alert("✅ Profile updated successfully!");
   };
 
@@ -53,9 +81,9 @@ export default function Account() {
 
           {!isEditing ? (
             <div className="space-y-2">
-              <p><strong>Name:</strong> {user.name}</p>
-              <p><strong>Email:</strong> {user.email}</p>
-              <p><strong>Phone:</strong> {user.phone}</p>
+              <p><strong>Name:</strong> {user.name || "—"}</p>
+              <p><strong>Email:</strong> {user.email || "—"}</p>
+              <p><strong>Phone:</strong> {user.phone || "—"}</p>
               <button
                 onClick={handleEditToggle}
                 className="mt-4 w-full bg-emerald-900 text-white py-2 rounded-md hover:bg-emerald-800 transition"
@@ -69,18 +97,21 @@ export default function Account() {
                 type="text"
                 value={user.name}
                 onChange={(e) => setUser({ ...user, name: e.target.value })}
+                placeholder="Full Name"
                 className="border p-2 w-full rounded-md"
               />
               <input
                 type="email"
                 value={user.email}
                 onChange={(e) => setUser({ ...user, email: e.target.value })}
+                placeholder="Email"
                 className="border p-2 w-full rounded-md"
               />
               <input
                 type="tel"
                 value={user.phone}
                 onChange={(e) => setUser({ ...user, phone: e.target.value })}
+                placeholder="Phone Number"
                 className="border p-2 w-full rounded-md"
               />
               <button
