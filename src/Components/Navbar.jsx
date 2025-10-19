@@ -72,7 +72,8 @@ export default function Navbar() {
           <li><Link to="/shop">Shop</Link></li>
           <li><a href="#newarrivals">New Arrivals</a></li>
           <Link to="/about">About</Link>
-          <li><a href="#contact">Contact</a></li>
+          <Link to="/contact">Contact</Link>
+
         </ul>
 
         {/* Desktop Icons */}
@@ -142,7 +143,8 @@ export default function Navbar() {
         <Link to="/shop" onClick={() => setIsOpen(false)}>Shop</Link>
         <a href="#newarrivals" onClick={() => setIsOpen(false)}>New Arrivals</a>
         <Link to="/about" onClick={() => setIsOpen(false)}>About</Link>
-        <a href="#contact" onClick={() => setIsOpen(false)}>Contact</a>
+        <Link to="contact" onClick={() => setIsOpen(false)}>Contact</Link>
+        
 
         {/* Cart Icon */}
         <div
