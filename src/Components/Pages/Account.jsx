@@ -8,7 +8,7 @@ export default function Account() {
   });
 
   const [address, setAddress] = useState("123 Market Street, Nairobi, Kenya");
-  const [wishlist, setWishlist] = useState([
+  const [wishlist] = useState([
     { id: 1, name: "Classic Jeans", price: 70.0, image: "/images/jeans.jpg" },
     { id: 2, name: "Denim Jacket", price: 120.0, image: "/images/jacket.jpg" },
   ]);
