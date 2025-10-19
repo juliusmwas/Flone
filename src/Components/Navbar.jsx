@@ -1,35 +1,73 @@
-import { useState, useContext } from "react";
-import {
-  IoCartOutline,
-  IoMenu,
-  IoClose,
-  IoPersonOutline,
-} from "react-icons/io5";
+import { useState, useContext, useEffect } from "react";
+import { IoCartOutline, IoMenu, IoClose, IoPersonOutline } from "react-icons/io5";
 import { Link, useNavigate } from "react-router-dom";
 import { CartContext } from "./Pages/CartContext";
+import { auth, db } from "../firebase";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signOut,
+  onAuthStateChanged,
+} from "firebase/auth";
+import { doc, setDoc } from "firebase/firestore";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
   const [showRegister, setShowRegister] = useState(false);
-  const [user, setUser] = useState(null); // ✅ Store logged-in user
-
+  const [user, setUser] = useState(null);
   const { cartItems } = useContext(CartContext);
   const navigate = useNavigate();
 
+  // Handle cart click
   const handleCartClick = () => navigate("/cart");
 
-  // ✅ Mock login & registration
-  const handleLogin = (e) => {
+  // 🔄 Track Firebase Auth state
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => setUser(currentUser));
+    return () => unsubscribe();
+  }, []);
+
+  // 🟩 Handle Registration
+  const handleRegister = async (e) => {
     e.preventDefault();
-    setUser({ name: "John Doe" });
-    setShowLogin(false);
+    const name = e.target.name.value;
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+
+    try {
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      await setDoc(doc(db, "users", userCredential.user.uid), {
+        name,
+        email,
+        createdAt: new Date(),
+      });
+      setShowRegister(false);
+      alert("✅ Account created successfully!");
+    } catch (error) {
+      alert(error.message);
+    }
   };
 
-  const handleRegister = (e) => {
+  // 🟩 Handle Login
+  const handleLogin = async (e) => {
     e.preventDefault();
-    setUser({ name: "New User" });
-    setShowRegister(false);
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      setShowLogin(false);
+      alert("✅ Logged in successfully!");
+    } catch (error) {
+      alert(error.message);
+    }
+  };
+
+  // 🟥 Logout
+  const handleLogout = async () => {
+    await signOut(auth);
+    alert("Logged out successfully!");
   };
 
   return (
@@ -51,7 +89,7 @@ export default function Navbar() {
 
         {/* Desktop Icons */}
         <div className="hidden md:flex text-xl items-center gap-5">
-          {/* 🛒 Cart */}
+          {/* Cart */}
           <div className="relative cursor-pointer" onClick={handleCartClick}>
             <IoCartOutline className="text-2xl hover:text-gray-300 transition" />
             {cartItems.length > 0 && (
@@ -61,27 +99,32 @@ export default function Navbar() {
             )}
           </div>
 
-          {/* 👤 User logic */}
+          {/* 🔐 Auth Buttons or Profile */}
           {!user ? (
             <>
               <button
-                className="border cursor-pointer px-4 py-2 rounded-xl text-center text-sm"
                 onClick={() => setShowLogin(true)}
+                className="border cursor-pointer px-4 py-2 rounded-xl text-center text-sm"
               >
                 Login
               </button>
               <button
-                className="bg-white cursor-pointer text-emerald-900 font-medium text-sm px-4 py-2 rounded-xl text-center"
                 onClick={() => setShowRegister(true)}
+                className="bg-white cursor-pointer text-emerald-900 font-medium text-sm px-4 py-2 rounded-xl text-center"
               >
                 Get started
               </button>
             </>
           ) : (
-            <IoPersonOutline
-              className="text-2xl cursor-pointer hover:text-gray-300 transition"
-              onClick={() => navigate("/account")}
-            />
+            <div className="flex items-center gap-3">
+              <IoPersonOutline
+                className="text-2xl cursor-pointer"
+                onClick={() => navigate("/account")}
+              />
+              <button onClick={handleLogout} className="text-sm underline">
+                Logout
+              </button>
+            </div>
           )}
         </div>
 
@@ -127,59 +170,91 @@ export default function Navbar() {
           )}
         </div>
 
-        {/* Mobile Buttons */}
-        {!user && (
+        {/* Mobile Auth Buttons */}
+        {!user ? (
           <div className="flex flex-col gap-3 mt-4">
             <button
+              onClick={() => {
+                setShowLogin(true);
+                setIsOpen(false);
+              }}
               className="border px-6 py-2 rounded-xl text-sm"
-              onClick={() => setShowLogin(true)}
             >
               Login
             </button>
             <button
+              onClick={() => {
+                setShowRegister(true);
+                setIsOpen(false);
+              }}
               className="bg-white text-emerald-900 font-medium text-sm px-6 py-2 rounded-xl"
-              onClick={() => setShowRegister(true)}
             >
               Get started
             </button>
           </div>
-        )}
-
-        {user && (
-          <IoPersonOutline
-            className="text-3xl mt-4 cursor-pointer"
-            onClick={() => navigate("/account")}
-          />
+        ) : (
+          <div className="flex flex-col gap-3 mt-4 items-center">
+            <IoPersonOutline
+              className="text-3xl cursor-pointer"
+              onClick={() => {
+                navigate("/account");
+                setIsOpen(false);
+              }}
+            />
+            <button
+              onClick={() => {
+                handleLogout();
+                setIsOpen(false);
+              }}
+              className="underline text-sm"
+            >
+              Logout
+            </button>
+          </div>
         )}
       </div>
 
-      {/* 🧾 Login Modal */}
+      {/* 🔸 Login Modal */}
       {showLogin && (
-        <div className="fixed inset-0 bg-black bg-opacity-60 flex justify-center items-center z-50">
-          <div className="bg-white rounded-2xl p-8 w-[90%] max-w-md shadow-lg">
-            <h2 className="text-xl font-semibold mb-4">Login</h2>
+        <div className="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50 px-4">
+          <div className="bg-white rounded-2xl p-6 w-full max-w-md shadow-xl">
+            <h2 className="text-xl font-semibold mb-4 text-center">Login</h2>
             <form onSubmit={handleLogin} className="space-y-4">
-              <input type="email" placeholder="Email" className="border p-3 rounded-md w-full" required />
-              <input type="password" placeholder="Password" className="border p-3 rounded-md w-full" required />
-              <button type="submit" className="bg-emerald-900 text-white w-full py-3 rounded-md hover:bg-emerald-800 transition">Login</button>
+              <input name="email" type="email" placeholder="Email" className="border p-3 rounded-md w-full" required />
+              <input name="password" type="password" placeholder="Password" className="border p-3 rounded-md w-full" required />
+              <button type="submit" className="bg-emerald-900 text-white w-full py-3 rounded-md hover:bg-emerald-800 transition">
+                Login
+              </button>
             </form>
-            <button onClick={() => setShowLogin(false)} className="mt-4 text-gray-600 hover:underline w-full text-center">Cancel</button>
+            <button
+              onClick={() => setShowLogin(false)}
+              className="mt-4 text-gray-600 hover:underline w-full text-center"
+            >
+              Cancel
+            </button>
           </div>
         </div>
       )}
 
-      {/* 🧾 Register Modal */}
+      {/* 🔸 Register Modal */}
       {showRegister && (
-        <div className="fixed inset-0 bg-black bg-opacity-60 flex justify-center items-center z-50">
-          <div className="bg-white rounded-2xl p-8 w-[90%] max-w-md shadow-lg">
-            <h2 className="text-xl font-semibold mb-4">Create Account</h2>
+        <div className="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50 px-4">
+          <div className="bg-white rounded-2xl p-6 w-full max-w-md shadow-xl">
+            <h2 className="text-xl font-semibold mb-4 text-center">Create Account</h2>
             <form onSubmit={handleRegister} className="space-y-4">
-              <input type="text" placeholder="Full Name" className="border p-3 rounded-md w-full" required />
-              <input type="email" placeholder="Email" className="border p-3 rounded-md w-full" required />
-              <input type="password" placeholder="Password" className="border p-3 rounded-md w-full" required />
-              <button type="submit" className="bg-emerald-900 text-white w-full py-3 rounded-md hover:bg-emerald-800 transition">Register</button>
+              <input name="name" type="text" placeholder="Full Name" className="border p-3 rounded-md w-full" required />
+              <input name="email" type="email" placeholder="Email" className="border p-3 rounded-md w-full" required />
+              <input name="password" type="password" placeholder="Password" className="border p-3 rounded-md w-full" required />
+              <button type="submit" className="bg-emerald-900 text-white w-full py-3 rounded-md hover:bg-emerald-800 transition">
+                Register
+              </button>
             </form>
-            <button onClick={() => setShowRegister(false)} className="mt-4 text-gray-600 hover:underline w-full text-center">Cancel</button>
+            <button
+              onClick={() => setShowRegister(false)}
+              className="mt-4 text-gray-600 hover:underline w-full text-center"
+            >
+              Cancel
+            </button>
           </div>
         </div>
       )}
