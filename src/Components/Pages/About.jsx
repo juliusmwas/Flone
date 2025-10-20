@@ -1,4 +1,4 @@
-import React from "react";
+
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
@@ -12,7 +12,7 @@ export default function About() {
         className="relative h-[60vh] flex items-center justify-center text-center bg-cover bg-center"
         style={{
           backgroundImage:
-            "url('/public/about-bg.png')", 
+            "url('/about-bg.png')", 
         }}
       >
         <div className="absolute inset-0 bg-black/50" />
@@ -57,7 +57,7 @@ export default function About() {
       {/* 🧵 Our Craft */}
       <section className="py-16 bg-white px-6 md:px-20 grid md:grid-cols-2 gap-12 items-center">
         <motion.img
-          src="/public/Hero.jpeg" // Replace with your own image
+          src="/Hero.jpeg" 
           alt="Our Craft"
           className="rounded-2xl shadow-lg object-cover w-full h-[400px]"
           initial={{ opacity: 0, x: -30 }}
