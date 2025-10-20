@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Navbar from "./Components/Navbar";
 import Hero from "./Components/Homepage/Hero";
 import Featured_Categories from "./Components/Homepage/Featured_Categories";
@@ -12,6 +12,9 @@ import Checkout from "./Components/Pages/Checkout";
 import Account from "./Components/Pages/Account";
 import About from "./Components/Pages/About";
 import Contact from "./Components/Pages/Contact";
+import FAQ from "./Components/Pages/FAQ";
+import Returns from "./Components/Pages/Returns";
+import Offers from "./Components/Pages/Offers";
 
 function App() {
   return (
@@ -38,7 +41,9 @@ function App() {
         <Route path="/account" element={<Account />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-
+        <Route path="/faq" element={<FAQ />} />
+        <Route path="/returns" element={<Returns />} />
+        <Route path="/offers" element={<Offers />} />
 
       </Routes>
     </div>

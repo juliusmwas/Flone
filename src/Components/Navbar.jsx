@@ -60,7 +60,7 @@ export default function Navbar() {
 
   return (
     <>
-      {/* ✅ Fixed Navbar */}
+      {/* Fixed Navbar */}
       <nav className="fixed top-0 left-0 w-full flex items-center justify-between p-5 bg-emerald-900 text-white z-50 border-b border-gray-600">
         <div className="p-1">
           <h1 className="text-xl lg:text-3xl font-bold">Flone.</h1>
@@ -131,9 +131,8 @@ export default function Navbar() {
 
       {/* 📱 Mobile Overlay Menu */}
       <div
-        className={`fixed top-0 left-0 h-full w-full bg-emerald-900 text-white flex flex-col items-center justify-center gap-6 text-lg transform transition-transform duration-300 z-40 ${
-          isOpen ? "translate-x-0" : "-translate-x-full"
-        }`}
+        className={`fixed top-0 left-0 h-full w-full bg-emerald-900 text-white flex flex-col items-center justify-center gap-6 text-lg transform transition-transform duration-300 z-40 ${isOpen ? "translate-x-0" : "-translate-x-full"
+          }`}
       >
         <IoClose
           className="absolute top-5 right-5 text-3xl cursor-pointer"
@@ -144,7 +143,7 @@ export default function Navbar() {
         <a href="#newarrivals" onClick={() => setIsOpen(false)}>New Arrivals</a>
         <Link to="/about" onClick={() => setIsOpen(false)}>About</Link>
         <Link to="contact" onClick={() => setIsOpen(false)}>Contact</Link>
-        
+
 
         {/* Cart Icon */}
         <div
