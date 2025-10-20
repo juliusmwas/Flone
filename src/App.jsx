@@ -15,6 +15,7 @@ import Contact from "./Components/Pages/Contact";
 import FAQ from "./Components/Pages/FAQ";
 import Returns from "./Components/Pages/Returns";
 import Offers from "./Components/Pages/Offers";
+import SaleItems from "./Components/Pages/SaleItems";
 
 function App() {
   return (
@@ -43,7 +44,8 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/faq" element={<FAQ />} />
         <Route path="/returns" element={<Returns />} />
-        <Route path="/offers" element={<Offers />} />
+        <Route path="/offers" element={<Offers />} />        
+        <Route path="/sale" element={<SaleItems />} />
 
       </Routes>
     </div>
